@@ -7,9 +7,13 @@ const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
 
+// EMPLOYEE ARRAYS
+const team = [];
+const arrayId = [];
+
 // TEAM BUILDING
 const teamBuilding = () => {
-    const team = () => {
+    const teamInfo = () => {
         return inquirer.prompt([
             {
             type: 'list',
@@ -54,7 +58,7 @@ const teamBuilding = () => {
                 validate: answer => {
                     // constrains input to accept only numbers
                     const input = answer.match(/^[0-9]\d*$/);
-                    if (!answer) {
+                    if (!input) {
                         return "numbers only. what is the manager's id no.?";
                     } else {
                         return true;
@@ -79,7 +83,7 @@ const teamBuilding = () => {
                 message: 'enter manager office number',
                 validate: answer => {
                     const input = answer.match(/^[0-9]\d*$/);
-                    if (!answer) {
+                    if (!input) {
                         return "numbers only. what is the office number of this manager?";
                     } else {
                         return true;
@@ -87,8 +91,14 @@ const teamBuilding = () => {
                 }
             }
         ])
-        
+        .then(answer => {
+            const manager = new Manager(answers.managerName, answers.managerId, answers.email, answers.officeNumber);
+            team.push(manager);
+            arrayId.push(answers.managerId);
+            teamInfo();
+        });
     }
+
 } 
 
 // CALLS
