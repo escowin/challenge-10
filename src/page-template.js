@@ -30,7 +30,7 @@ const generateTeam = (team) => {
                 <ul class = "team-list">
                     <li class = "list-item">ID ${engineer.getId()}</li>
                     <li class = "list-item">Email <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-                    <li class = "list-item">GitHub <a href="https://github.com/${engineer.gitHub()}">${engineer.gitHub()}</a></li>
+                    <li class = "list-item">GitHub <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
                 </ul>
             </div>
         </div>
@@ -65,12 +65,12 @@ const generateTeam = (team) => {
     );
     html.push(team
         .filter(employee => employee.getRole() === "Engineer")
-        .map(manager => createEngineer(engineer))
+        .map(engineer => createEngineer(engineer))
         .join("")
     );
     html.push(team
         .filter(employee => employee.getRole() === "Intern")
-        .map(manager => createIntern(intern))
+        .map(intern => createIntern(intern))
         .join("")
     );
 
