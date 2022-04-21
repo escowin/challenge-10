@@ -87,22 +87,21 @@ module.exports = (team) => {
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device=width, initial-scale=1.0" />
             <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-            <link rel="stylesheet"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
             <script src="https://kit.fontawesome.com/c502137733.js"></script>
             <link rel="stylesheet" href="style.css">
             <title>Team Profile</title>
         </head>
 
-        <body>
-      <div class='container-fluid'>
+    <body>
+        <div class='container-fluid'>
             <div class='row'>
-                  <div class='col-12 jumbotron mb-3 title'>
-                        <h1>Team Profile</h1>
-                  </div>
+                <div class='col-12 jumbotron mb-3 title'>
+                    <h1>Team Profile</h1>
+                </div>
             </div>
-      </div>
-      <div class='container'>
+        </div>
+        <div class='container'>
             <div class='row'>
                 <div class='employee-style col-12 d-flex justify-cintent-center'>
                     ${generateTeam(team)}
