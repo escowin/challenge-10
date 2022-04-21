@@ -9,25 +9,25 @@ test('get employee stats as an object', () => {
     // expect(employee.role).toEqual("Employee");
 });
 
-test('get employee name from getName()', () => {
+test('get employee name via getName()', () => {
     const name = "dave";
     const employee = new Employee(name);
     expect(employee.getName()).toEqual(name);
 });
 
-test('get employee id from getId()', () => {
+test('get employee id via getId()', () => {
     const id = 11;
     const employee = new Employee('sean', id);
     expect(employee.getId()).toEqual(id);
 });
 
-test('get employee email from getEmail()', () => {
+test('get employee email via getEmail()', () => {
     const email = "email@email.com";
     const employee = new Employee("lex", 11, email);
     expect(employee.getEmail()).toEqual(email);
 });
 
-test('get employee role from getRole()', () => {
+test('get employee role via getRole()', () => {
     const role = 'Employee';
     const employee = new Employee('smithers', role);
     expect(employee.getRole()).toEqual(role);
