@@ -3,13 +3,15 @@ const Employee = require('../lib/Employee');
 
 // mock data
 jest.mock('../lib/Employee');
+// console.log(new Employee());
 
-test('create a manager object', () => {
-    const manager = new Manager();
+test('create a manager object w/ properties', () => {
+    const manager = new Manager(101);
+    expect(manager.officeNumber).toEqual(expect.any(Number));
+    // console.log(manager);
 });
 
-test('get the office number of manager', () => {
+test('get the role of manager', () => {
     const manager = new Manager();
-
-    // expect(manager.get)
-})
+    expect(manager.getRole()).toEqual(expect.stringContaining('Manager'));
+});
