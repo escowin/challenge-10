@@ -1,5 +1,31 @@
+const inquirer = require('inquirer');
+
+
 // start app
-// - ask for team manager name, id#, email address, office number
+// - team building prompts
+inquirer.prompt([
+    {
+        type: 'text',
+        name: 'name',
+        message: "enter team manager's name"
+    },
+    {
+        type: 'text',
+        name: 'id',
+        message: "enter team manager's id"
+    },
+    {
+        type: 'text',
+        name: 'email',
+        message: "enter team manager's email address"
+    },
+    {
+        type: 'text',
+        name: 'officeNumber',
+        message: "enter team manager's office number"
+    },
+]);
+
 // - after user answers prompts, show user a menu (options: add engineer, add intern, finish building team)
 
 // select | engineer
