@@ -9,6 +9,7 @@
 // select | intern
 // - enter intern name, id#, email, school
 // - after user answers prompts, return to menu
+// ** validation to ensure proper input
 
 // select | finish building team
 // - exit app, generate html
