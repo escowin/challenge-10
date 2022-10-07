@@ -1,6 +1,5 @@
 const inquirer = require('inquirer');
 
-
 // start app
 // - team building prompts
 inquirer.prompt([
@@ -24,7 +23,9 @@ inquirer.prompt([
         name: 'officeNumber',
         message: "enter team manager's office number"
     },
-]);
+]).then(managerDeatils => {
+    console.log(managerDeatils);
+});
 
 // - after user answers prompts, show user a menu (options: add engineer, add intern, finish building team)
 
