@@ -60,11 +60,10 @@ const menu = function () {
                 addEngineer();
                 break;
             case "Add an intern":
-                console.log('intern case');
+                addIntern();
                 break;
             case "Finalize team":
-                console.log('finalize team case');
-                console.log(team);
+                finalizeTeam();
         }
     });
 }
@@ -103,39 +102,42 @@ const addEngineer = function() {
 };
 
 // select | intern
-// App.prototype.addIntern = function() {
-//     inquirer
-//     .prompt([
-//         {
-//         type: "text",
-//         name: "name",
-//         message: "enter intern's name",
-//         },
-//         {
-//         type: "number",
-//         name: "id",
-//         message: "enter intern's id",
-//         },
-//         {
-//         type: "text",
-//         name: "email",
-//         message: "enter intern's email address",
-//         },
-//         {
-//         type: "text",
-//         name: "school",
-//         message: "enter intern's school",
-//         },
-//     ])
-//     .then((internDetails) => {
-//         console.log(internDetails);
-//     });
-//     // - after user answers prompts, return to menu
-//     // ** validation to ensure proper input
-// };
+const addIntern = function() {
+    inquirer
+    .prompt([
+        {
+        type: "text",
+        name: "name",
+        message: "enter intern's name",
+        },
+        {
+        type: "number",
+        name: "id",
+        message: "enter intern's id",
+        },
+        {
+        type: "text",
+        name: "email",
+        message: "enter intern's email address",
+        },
+        {
+        type: "text",
+        name: "school",
+        message: "enter intern's school",
+        },
+    ])
+    .then(answers => {
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+        team.push(intern);
+        menu();
+    });
+    // ** validation to ensure proper input
+};
 
 // select | finish building team
-// App.prototype.finalizeTeam = function() {};
+const finalizeTeam = function() {
+    team.forEach(employee => console.log(employee.name) )
+};
 // - exit app, generate html
 
 // fs writeFile
