@@ -1,15 +1,26 @@
 const generatePage = team => {
-    console.log(team);
+    return `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Team profile</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Team profile</h1>
+        </header>
+        <main>
+            ${console.log(
+                team.filter(employee => employee.getRole() === 'Manager')
+            )}
+        </main>
+        <footer></footer>
+    </body>
+  `;
 };
 
-// const generateManager = manager => {
-//     console.log(manager)
-// };
-// const generateEngineer = engineer => {
-//     console.log(engineer)
-// };
-// const generateIntern = intern => {
-//     console.log(intern)
-// };
 
 module.exports = generatePage;
