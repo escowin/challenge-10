@@ -1,3 +1,4 @@
+const fs = require('fs');
 const inquirer = require("inquirer");
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
@@ -136,7 +137,7 @@ const addIntern = function() {
 
 // select | finish building team
 const finalizeTeam = function() {
-    team.forEach(employee => console.log(employee.name) )
+    team.forEach(employee => console.log(employee.name));
 };
 // - exit app, generate html
 
