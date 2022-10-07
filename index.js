@@ -1,40 +1,92 @@
-const inquirer = require('inquirer');
+const inquirer = require("inquirer");
 
 // start app
 // - team building prompts
-inquirer.prompt([
+inquirer
+  .prompt([
     {
-        type: 'text',
-        name: 'name',
-        message: "enter team manager's name"
+      type: "text",
+      name: "name",
+      message: "enter team manager's name",
     },
     {
-        type: 'text',
-        name: 'id',
-        message: "enter team manager's id"
+      type: "text",
+      name: "id",
+      message: "enter team manager's id",
     },
     {
-        type: 'text',
-        name: 'email',
-        message: "enter team manager's email address"
+      type: "text",
+      name: "email",
+      message: "enter team manager's email address",
     },
     {
-        type: 'text',
-        name: 'officeNumber',
-        message: "enter team manager's office number"
+      type: "text",
+      name: "officeNumber",
+      message: "enter team manager's office number",
     },
-]).then(managerDeatils => {
+  ])
+  .then((managerDeatils) => {
     console.log(managerDeatils);
-});
+  });
 
 // - after user answers prompts, show user a menu (options: add engineer, add intern, finish building team)
 
 // select | engineer
-// - enter engineer name, id#, email, github username
+inquirer
+  .prompt([
+    {
+      type: "text",
+      name: "name",
+      message: "enter engineer's name",
+    },
+    {
+      type: "text",
+      name: "id",
+      message: "enter engineer's id",
+    },
+    {
+      type: "text",
+      name: "email",
+      message: "enter engineer's email address",
+    },
+    {
+      type: "text",
+      name: "github",
+      message: "enter engineer's github username",
+    },
+  ])
+  .then((engineerDetails) => {
+    console.log(engineerDetails);
+  });
 // - after user answers prompts, return to menu
 
 // select | intern
-// - enter intern name, id#, email, school
+inquirer
+  .prompt([
+    {
+      type: "text",
+      name: "name",
+      message: "enter intern's name",
+    },
+    {
+      type: "text",
+      name: "id",
+      message: "enter intern's id",
+    },
+    {
+      type: "text",
+      name: "email",
+      message: "enter intern's email address",
+    },
+    {
+      type: "text",
+      name: "school",
+      message: "enter intern's school",
+    },
+  ])
+  .then((internDetails) => {
+    console.log(internDetails);
+  });
 // - after user answers prompts, return to menu
 // ** validation to ensure proper input
 
