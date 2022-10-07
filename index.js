@@ -42,7 +42,22 @@ const createManager = function() {
 
 // - after user answers prompts, show user a menu(options: add engineer, add intern, finish building team)
 const menu = function () {
-    console.log('add engineer, add intern, finalize team');
+    console.log(`
+    ===============================
+      Continue building your team
+    ===============================
+    `);
+
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "options",
+            message: "choose from the following options:",
+            choices: ["Add an engineer", "Add an intern", "Finalize team"]
+        }
+    ]).then(answer => {
+        console.log(answer);
+    });
 }
 
 // select | engineer
