@@ -7,7 +7,6 @@ jest.mock('../lib/Employee');
 // test for intern properties
 test('create an Intern object w/ properties', () => {
     const intern = new Intern('UT Austin');
-    // console.log(intern);
     expect(intern.school).toBe('UT Austin');
 });
 
