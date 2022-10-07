@@ -36,7 +36,6 @@ const createManager = function() {
         const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
         team.push(manager);
         menu();
-        // console.log(team);
     });
 }
 
@@ -58,47 +57,50 @@ const menu = function () {
     ]).then(answer => {
         switch (answer.options) {
             case "Add an engineer":
-                console.log('engineer case');
+                addEngineer();
                 break;
             case "Add an intern":
                 console.log('intern case');
                 break;
             case "Finalize team":
                 console.log('finalize team case');
+                console.log(team);
         }
     });
 }
 
 // select | engineer
-// App.prototype.addEngineer = function() {
-//     inquirer
-//     .prompt([
-//         {
-//         type: "text",
-//         name: "name",
-//         message: "enter engineer's name",
-//         },
-//         {
-//         type: "number",
-//         name: "id",
-//         message: "enter engineer's id",
-//         },
-//         {
-//         type: "text",
-//         name: "email",
-//         message: "enter engineer's email address",
-//         },
-//         {
-//         type: "text",
-//         name: "github",
-//         message: "enter engineer's github username",
-//         },
-//     ])
-//     .then((engineerDetails) => {
-//         console.log(engineerDetails);
-//     });
-//     // - after user answers prompts, return to menu
-// };
+const addEngineer = function() {
+    inquirer
+    .prompt([
+        {
+        type: "text",
+        name: "name",
+        message: "enter engineer's name",
+        },
+        {
+        type: "number",
+        name: "id",
+        message: "enter engineer's id",
+        },
+        {
+        type: "text",
+        name: "email",
+        message: "enter engineer's email address",
+        },
+        {
+        type: "text",
+        name: "github",
+        message: "enter engineer's github username",
+        },
+    ])
+    .then(answers => {
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+        team.push(engineer);
+        menu();
+    });
+    // - after user answers prompts, return to menu
+};
 
 // select | intern
 // App.prototype.addIntern = function() {
