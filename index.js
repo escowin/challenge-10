@@ -56,7 +56,16 @@ const menu = function () {
             choices: ["Add an engineer", "Add an intern", "Finalize team"]
         }
     ]).then(answer => {
-        console.log(answer);
+        switch (answer.options) {
+            case "Add an engineer":
+                console.log('engineer case');
+                break;
+            case "Add an intern":
+                console.log('intern case');
+                break;
+            case "Finalize team":
+                console.log('finalize team case');
+        }
     });
 }
 
