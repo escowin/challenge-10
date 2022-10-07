@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-
+const generatePage = require('./src/page-template');
 
 const team = [];
 
@@ -38,7 +38,7 @@ const createManager = function() {
         team.push(manager);
         menu();
     });
-}
+};
 
 // - after user answers prompts, show user a menu(options: add engineer, add intern, finish building team)
 const menu = function () {
@@ -67,7 +67,7 @@ const menu = function () {
                 finalizeTeam();
         }
     });
-}
+};
 
 // select | engineer
 const addEngineer = function() {
@@ -137,7 +137,12 @@ const addIntern = function() {
 
 // select | finish building team
 const finalizeTeam = function() {
-    team.forEach(employee => console.log(employee.name));
+    // team.forEach(employee => console.log(employee.name));
+    generatePage(team);
+    // fs.writeFile('index.html', generatePage(team), (err) => {
+    //     if (err) throw err;
+    //     console.log('team profile page has been built.');
+    // });
 };
 // - exit app, generate html
 
@@ -147,8 +152,6 @@ const finalizeTeam = function() {
 // dist/profile.html
 // - clicking on email link will open default email program & populate the TO field with employee's email
 // - clicking on github link opens new tab
-
-// module.exports = App;
 
 // calls
 createManager();
