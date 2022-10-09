@@ -1,12 +1,13 @@
 const generatePage = team => {
-  console.log(team)
-  // const employees = [];
+  const employees = [];
 
-  // employees.push(
-  //   team
-  //     .filter(employee => employee.getRole() === "Manager")
-  //     .map(manager => generateManager(manager))
-  // );
+  const generateManager = manager => console.log(manager.getRole())
+
+  employees.push(
+    team
+      .filter(employee => employee.getRole() === "Manager")
+      .map(manager => generateManager(manager))
+  );
 
 //   employees.push(
 //     team
