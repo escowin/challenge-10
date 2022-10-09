@@ -166,7 +166,16 @@ const mockData = [
   new Intern ('Jean', 5, 'jean@pierceandpierce.com', 'NYU')
 ];
 
-const testing = () => generatePage(mockData);
+const testing = () => {
+  const pageHTML = generatePage(mockData);
+  fs.writeFile('./dist/index.html', pageHTML, (err) => {
+    if (err) {
+      console.log(err);
+      return;
+      console.log("file written");
+    }
+  });
+};
 
 testing();
 
