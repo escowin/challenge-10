@@ -1,9 +1,25 @@
 const generatePage = team => {
   const employees = [];
 
-  const generateManager = manager => console.log(manager.getOfficeNumber())
-  const generateEngineer = manager => console.log(manager.getGithub())
-  const generateIntern = manager => console.log(manager.getSchool())
+  const generateManager = manager => {
+    return `
+    <section>
+      <h2>${manager.getName()}</h2>
+      <p>email:</p>
+      <p>${manager.getEmail()}</p>
+
+      <p>id:</p>
+      <p>${manager.getId()}</p>
+
+      <p>office:</p>
+      <p>${manager.getOfficeNumber()}</p>
+    </section>
+    `;
+  };
+  console.log(generateManager());
+  
+  const generateEngineer = manager => console.log(manager.getRole());
+  const generateIntern = manager => console.log(manager.getRole());
 
 
   employees.push(
@@ -39,6 +55,7 @@ const generatePage = team => {
             <h1>Team profile</h1>
         </header>
         <main>
+          ${generateManager(manager)}
         </main>
         <footer>
             &copy; ${new Date().getFullYear()} 
