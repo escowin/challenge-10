@@ -1,7 +1,10 @@
 const generatePage = team => {
   const employees = [];
 
-  const generateManager = manager => console.log(manager.getRole())
+  const generateManager = manager => console.log(manager.getOfficeNumber())
+  const generateEngineer = manager => console.log(manager.getGithub())
+  const generateIntern = manager => console.log(manager.getSchool())
+
 
   employees.push(
     team
@@ -9,19 +12,17 @@ const generatePage = team => {
       .map(manager => generateManager(manager))
   );
 
-//   employees.push(
-//     team
-//       .filter(employee => employee.getRole() === "Engineer")
-//       .map(engineer => generateEngineer(engineer))
-//   );
+  employees.push(
+    team
+      .filter(employee => employee.getRole() === "Engineer")
+      .map(engineer => generateEngineer(engineer))
+  );
 
-//   employees.push(
-//     team
-//       .filter(employee => employee.getRole() === "Intern")
-//       .map(intern => generateIntern(intern))
-//   );
-
-  //   console.log(team.manager);
+  employees.push(
+    team
+      .filter(employee => employee.getRole() === "Intern")
+      .map(intern => generateIntern(intern))
+  );
 
   return `
     <!DOCTYPE html>
