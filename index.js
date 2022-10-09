@@ -166,13 +166,12 @@ const mockData = [
   new Intern ('Jean', 5, 'jean@pierceandpierce.com', 'NYU')
 ];
 
-console.log(mockData)
-// const testing = mockData => {
-//     console.log(mockData)
-//     // generatePage(mockData);
-// };
+const testing = mockData => {
+    console.log(mockData)
+    // generatePage(mockData);
+};
 
-// testing();
+testing();
 
 // calls
 // createManager();
