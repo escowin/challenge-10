@@ -1,25 +1,62 @@
-const generatePage = team => {
+const generateTeam = team => {
   const employees = [];
 
   const generateManager = manager => {
+    // console.log(manager.getName());
     return `
-    <section>
-      <h2>${manager.getName()}</h2>
-      <p>email:</p>
-      <p>${manager.getEmail()}</p>
+      <section>
+        <h2>${manager.getName()}</h2>
+        <p class='role'>Manager</p>
 
-      <p>id:</p>
-      <p>${manager.getId()}</p>
+        <p>email:</p>
+        <p>${manager.getEmail()}</p>
 
-      <p>office:</p>
-      <p>${manager.getOfficeNumber()}</p>
-    </section>
+        <p>id:</p>
+        <p>${manager.getId()}</p>
+
+        <p>office:</p>
+        <p>${manager.getOfficeNumber()}</p>
+      </section>
     `;
   };
-  console.log(generateManager());
   
-  const generateEngineer = manager => console.log(manager.getRole());
-  const generateIntern = manager => console.log(manager.getRole());
+  const generateEngineer = engineer => {
+    // console.log(engineer.getName());
+    return `
+      <section>
+        <h2>${engineer.getName()}</h2>
+        <p class='role'>Engineer</p>
+
+        <p>email:</p>
+        <p>${engineer.getEmail()}</p>
+
+        <p>id:</p>
+        <p>${engineer.getId()}</p>
+
+        <p>github:</p>
+        <p>${engineer.getGithub()}</p>
+      </section>
+    `;
+  };
+
+  const generateIntern = intern => {
+    // console.log(intern.getSchool())
+    return `
+      <section>
+        <h2>${intern.getName()}</h2>
+        <p class='role'>Intern</p>
+
+        <p>email:</p>
+        <p>${intern.getEmail()}</p>
+
+        <p>id:</p>
+        <p>${intern.getId()}</p>
+
+        <p>github:</p>
+        <p>${intern.getSchool()}</p>
+      </section>
+    `;
+  };
 
 
   employees.push(
@@ -39,7 +76,9 @@ const generatePage = team => {
       .filter(employee => employee.getRole() === "Intern")
       .map(intern => generateIntern(intern))
   );
+}
 
+const generatePage = team => {
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -55,7 +94,7 @@ const generatePage = team => {
             <h1>Team profile</h1>
         </header>
         <main>
-          ${generateManager(manager)}
+          ${generateTeam(team)}
         </main>
         <footer>
             &copy; ${new Date().getFullYear()} 
@@ -66,18 +105,5 @@ const generatePage = team => {
     </body>
   `;
 };
-
-// const generateManager = manager => {
-//     const { name, id, email, officeNumber } = manager
-//     console.log(name);
-//   };
-  
-//   const generateEngineer = engineer => {
-//     console.log(engineer);
-//   };
-  
-  // const generateIntern = intern => {
-  //     console.log(intern);
-  // };
 
 module.exports = generatePage;
