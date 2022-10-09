@@ -1,11 +1,12 @@
 const generatePage = team => {
-  const employees = [];
+  console.log(team)
+  // const employees = [];
 
-  employees.push(
-    team
-      .filter(employee => employee.getRole() === "Manager")
-      .map(manager => generateManager(manager))
-  );
+  // employees.push(
+  //   team
+  //     .filter(employee => employee.getRole() === "Manager")
+  //     .map(manager => generateManager(manager))
+  // );
 
 //   employees.push(
 //     team
@@ -36,9 +37,6 @@ const generatePage = team => {
             <h1>Team profile</h1>
         </header>
         <main>
-            ${generateManager(manager)}
-            ${generateEngineer(engineer)}
-            ${generateIntern(intern)}
         </main>
         <footer>
             &copy; ${new Date().getFullYear()} 
@@ -50,10 +48,10 @@ const generatePage = team => {
   `;
 };
 
-const generateManager = manager => {
-    const { name, id, email, officeNumber } = manager
-    console.log(name);
-  };
+// const generateManager = manager => {
+//     const { name, id, email, officeNumber } = manager
+//     console.log(name);
+//   };
   
 //   const generateEngineer = engineer => {
 //     console.log(engineer);
