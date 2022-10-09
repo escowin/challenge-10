@@ -137,8 +137,9 @@ const addIntern = function() {
 
 // select | finish building team
 const finalizeTeam = function() {
+    console.log(team);
     // team.forEach(employee => console.log(employee.name));
-    generatePage(team);
+    // generatePage(team);
     // fs.writeFile('index.html', generatePage(team), (err) => {
     //     if (err) throw err;
     //     console.log('team profile page has been built.');
@@ -153,5 +154,25 @@ const finalizeTeam = function() {
 // - clicking on email link will open default email program & populate the TO field with employee's email
 // - clicking on github link opens new tab
 
+
+// mock data
+const mockData = [
+  new Manager (
+    'Patrick Bateman', 1, 'bateman@pierceandpierce.com', 69
+  ),
+  new Engineer ('David Van Patten', 2, 'vanpatten@pierceandpierce.com', 'vanhub'),
+  new Engineer ('Timothy Bryce', 3, 'bryce@pierceandpierce.com', 'brycehub'),
+  new Intern ('Paul Allen', 4, 'paul@pierceandpierce.com', 'Yale'),
+  new Intern ('Jean', 5, 'jean@pierceandpierce.com', 'NYU')
+];
+
+console.log(mockData)
+// const testing = mockData => {
+//     console.log(mockData)
+//     // generatePage(mockData);
+// };
+
+// testing();
+
 // calls
-createManager();
+// createManager();
