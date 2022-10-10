@@ -50,7 +50,7 @@
   
   Run the following command to run tests:
   ```
-  node run test <lib/____.js>
+  npm run test <lib/____.js>
   ```
 
 ## Screenshots
