@@ -10,6 +10,14 @@ const team = [];
 // start app
 // - team building prompts
 const createManager = function () {
+  console.log(`
+  ===============================
+    Team Profile Generator 2.0
+
+    \u00A9 ${new Date().getFullYear()} Edwin M. Escobar
+  ===============================
+  `);
+
   inquirer
     .prompt([
       {
