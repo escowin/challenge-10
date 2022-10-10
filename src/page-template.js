@@ -5,16 +5,16 @@ const generateTeam = team => {
     // console.log(manager.getName());
     return `
       <section>
-        <h2>${manager.getName()}</h2>
+        <h2 class='name'>${manager.getName()}</h2>
         <p class='role'>Manager</p>
 
-        <p>email:</p>
+        <p class='details'>email</p>
         <p>${manager.getEmail()}</p>
 
-        <p>id:</p>
+        <p class='details'>id</p>
         <p>${manager.getId()}</p>
 
-        <p>office:</p>
+        <p class='details'>office</p>
         <p>${manager.getOfficeNumber()}</p>
       </section>
     `;
@@ -27,13 +27,13 @@ const generateTeam = team => {
         <h2>${engineer.getName()}</h2>
         <p class='role'>Engineer</p>
 
-        <p>email:</p>
+        <p class='details'>email</p>
         <p>${engineer.getEmail()}</p>
 
-        <p>id:</p>
+        <p class='details'>id</p>
         <p>${engineer.getId()}</p>
 
-        <p>github:</p>
+        <p class='details'>github</p>
         <p>${engineer.getGithub()}</p>
       </section>
     `;
@@ -46,13 +46,13 @@ const generateTeam = team => {
         <h2>${intern.getName()}</h2>
         <p class='role'>Intern</p>
 
-        <p>email:</p>
+        <p  class='details'>email</p>
         <p>${intern.getEmail()}</p>
 
-        <p>id:</p>
+        <p  class='details'>id</p>
         <p>${intern.getId()}</p>
 
-        <p>github:</p>
+        <p  class='details'>github</p>
         <p>${intern.getSchool()}</p>
       </section>
     `;
