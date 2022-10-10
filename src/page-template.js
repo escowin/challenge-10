@@ -13,7 +13,7 @@ const generateTeam = team => {
         <p>${manager.getId()}</p>
 
         <p class='details'><i class="fa-solid fa-envelope"></i></p>
-        <p class='email'>${manager.getEmail()}</p>
+        <p class='email'><a href='mailto:${manager.getEmail()}'>${manager.getEmail()}</a></p>
 
         <p class='details'><i class="fa-solid fa-building"></i></p>
         <p>${manager.getOfficeNumber()}</p>
@@ -31,7 +31,7 @@ const generateTeam = team => {
         <p>${engineer.getId()}</p>
 
         <p class='details'><i class="fa-solid fa-envelope"></i></p>
-        <p class='email'>${engineer.getEmail()}</p>
+        <p class='email'><a href='mailto:${engineer.getEmail()}'>${engineer.getEmail()}</a></p>
 
         <p class='details'><i class="fa-brands fa-github"></i></p>
         <p><a href='https://github.com/${engineer.getGithub()}/' target='_blank'>${engineer.getGithub()}</a></p>
@@ -48,7 +48,7 @@ const generateTeam = team => {
         <p>${intern.getId()}</p>
 
         <p class='details'><i class="fa-solid fa-envelope"></i></p>
-        <p class='email'>${intern.getEmail()}</p>
+        <p class='email'><a href='mailto:${intern.getEmail()}'>${intern.getEmail()}</a></p>
 
         <p class='details'><i class="fa-solid fa-school-flag"></i></p>
         <p>${intern.getSchool()}</p>

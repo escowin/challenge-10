@@ -37,7 +37,7 @@ a {
     transition: 1s
 }
 
-.email {
+.email a {
     font-variant: normal;
 }
 
