@@ -175,7 +175,7 @@ const finalizeTeam = function () {
 const mockData = [
   new Manager("Patrick Bateman", 1, "bateman@pierceandpierce.com", 69),
   new Engineer(
-    "David Van Patten",
+    "David van Patten",
     2,
     "vanpatten@pierceandpierce.com",
     "vanhub"
