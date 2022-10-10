@@ -3,7 +3,6 @@ const generateTeam = team => {
 
 
   const generateManager = manager => {
-    // console.log(manager.getName());
     return `
       <section>
         <h2 class='name'>${manager.getName()}</h2>
@@ -74,9 +73,7 @@ const generateTeam = team => {
       .map(intern => generateIntern(intern))
   );
 
-  // console.log(employees.join('').replace(/>,/g, '>'))
   return employees.join('').replace(/>,/g, '>');
-
 }
 
 const generatePage = team => {
@@ -103,9 +100,12 @@ const generatePage = team => {
         <footer>
             &copy; ${new Date().getFullYear()} 
             <a href='https://github.com/escowin/team-profile-generator' target='_blank'>
-                Edwin escobar
+                Edwin m. escobar
             </a>
         </footer>
+        <script>
+          console.log('\u00A9 ${new Date().getFullYear()} Edwin M. Escobar https://github.com/escowin/team-profile-generator')
+        </script>
     </body>
   `;
 };

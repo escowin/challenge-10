@@ -10,6 +10,14 @@ const team = [];
 // start app
 // - team building prompts
 const createManager = function () {
+  console.log(`
+  ===============================
+    Team Profile Generator 2.0
+
+    \u00A9 ${new Date().getFullYear()} Edwin M. Escobar
+  ===============================
+  `);
+
   inquirer
     .prompt([
       {
@@ -195,18 +203,18 @@ const addIntern = function () {
 
 // select | finalize team: exits prompts, generates html, copies stylesheet
 const finalizeTeam = function () {
-  // generatePage(team);
-  // fs.writeFile('index.html', generatePage(team), (err) => {
-  //     if (err) throw err;
-  //     console.log('team profile page has been built.');
-  // });
-  // fs.copyFile('./src/styles.css', './dist/styles.css', (err) => {
-  //   if (err) {
-  //     console.log(err);
-  //     return;
-  //   }
-  //   console.log('stylesheet copied to ./dist/styles.css');
-  // });
+  generatePage(team);
+  fs.writeFile('./dist/index.html', generatePage(team), (err) => {
+      if (err) throw err;
+      console.log('team profile page has been built.');
+  });
+  fs.copyFile('./src/styles.css', './dist/styles.css', (err) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('stylesheet copied to ./dist/styles.css');
+  });
 };
 
 // mock data
@@ -241,7 +249,7 @@ const testing = () => {
   });
 };
 
-testing();
+// testing();
 
 // calls
-// createManager();
+createManager();
