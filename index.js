@@ -196,7 +196,7 @@ const addIntern = function () {
 // select | finalize team: exits prompts, generates html, copies stylesheet
 const finalizeTeam = function () {
   generatePage(team);
-  fs.writeFile('index.html', generatePage(team), (err) => {
+  fs.writeFile('./dist/index.html', generatePage(team), (err) => {
       if (err) throw err;
       console.log('team profile page has been built.');
   });
