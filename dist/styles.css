@@ -1,7 +1,7 @@
 :root {
-    --primary: rgb(238, 228, 228);
-    --secondary: rgba(244, 234, 234, 0.952);
-    --tertiary: rgba(42, 86, 121, 0.851);
+    --primary: rgb(162, 151, 151);
+    --secondary: rgba(102, 79, 79, 0.952);
+    --tertiary: rgba(30, 38, 44, 0.851);
 }
 
 * {
@@ -18,7 +18,7 @@ a {
     text-decoration: none;
 }
 
-h1, p {
+p {
     color: var(--secondary);
 }
 
@@ -26,6 +26,7 @@ body {
     background: var(--primary);
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -35,10 +36,13 @@ header {
     top: 0;
     background-color: var(--tertiary);
     padding-left: .5rem;
+    box-shadow: 0 .5rem 2vh var(--secondary)
 }
 
 footer {
     text-align: center;
+    color: var(--secondary);
+    text-shadow: 0 0 .25rem .75rem var(--secondary);
 }
 
 main {
@@ -69,8 +73,13 @@ section {
     grid-column: span 2;
 }
 
-h2 {
+h1, h2 {
     color: var(--primary);
+    text-shadow: inset 0 0 .25rem var(--tertiary);
+}
+
+.names {
+    text-shadow: inset 0 0 .251rem var(--tertiary);
 }
 
 @media screen and (min-width: 768px) {
@@ -91,12 +100,13 @@ h2 {
 
 
 @media screen and (min-width: 1024px) {
-    /* main {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-    } */
     section {
         width: 30vw;
+        transition: 1s;
+        /* box-shadow: transparent; */
+    }
+
+    section:hover {
+        box-shadow: 0 0 1vw black;
     }
 }
