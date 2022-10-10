@@ -1,6 +1,7 @@
 const generateTeam = team => {
   const employees = [];
 
+
   const generateManager = manager => {
     // console.log(manager.getName());
     return `
@@ -21,7 +22,6 @@ const generateTeam = team => {
   };
   
   const generateEngineer = engineer => {
-    // console.log(engineer.getName());
     return `
       <section>
         <h2>${engineer.getName()}</h2>
@@ -35,12 +35,10 @@ const generateTeam = team => {
 
         <p class='details'>github</p>
         <p>${engineer.getGithub()}</p>
-      </section>
-    `;
+      </section>`;
   };
 
   const generateIntern = intern => {
-    // console.log(intern.getSchool())
     return `
       <section>
         <h2>${intern.getName()}</h2>
@@ -54,8 +52,7 @@ const generateTeam = team => {
 
         <p  class='details'>github</p>
         <p>${intern.getSchool()}</p>
-      </section>
-    `;
+      </section>`;
   };
 
 
@@ -77,10 +74,13 @@ const generateTeam = team => {
       .map(intern => generateIntern(intern))
   );
 
-  return employees.join('');
+  // console.log(employees.join('').replace(/>,/g, '>'))
+  return employees.join('').replace(/>,/g, '>');
+
 }
 
 const generatePage = team => {
+
   return `
     <!DOCTYPE html>
     <html lang="en">
