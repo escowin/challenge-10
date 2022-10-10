@@ -191,8 +191,15 @@ const testing = () => {
     if (err) {
       console.log(err);
       return;
-      console.log("file written");
     }
+    console.log('team profile written to ./dist/index.html')
+  });
+  fs.copyFile('./src/styles.css', './dist/styles.css', (err) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('stylesheet copied to ./dist/styles.css')
   });
 };
 

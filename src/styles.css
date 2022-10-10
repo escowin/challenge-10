@@ -1,0 +1,158 @@
+:root {
+    --primary: rgb(162, 151, 151);
+    --secondary: rgba(156, 124, 124, 0.952);
+    --tertiary: rgba(30, 38, 44, 0.851);
+    --hover: rgb(76, 111, 147);
+}
+
+* {
+    font-variant: small-caps;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* typography */
+p {
+    color: var(--secondary);
+    font-family: 'Nunito', sans-serif;
+}
+
+header,
+.name, .role {
+    font-family: 'Cinzel', serif;
+}
+
+header {
+    letter-spacing: .25rem;
+}
+
+.role {
+    letter-spacing: .1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: 1s
+}
+
+.email a {
+    font-variant: normal;
+}
+
+body {
+    background: var(--primary);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    position: sticky;
+    position: -webkit-sticky;
+    z-index: 9999;
+    top: 0;
+    background-color: var(--tertiary);
+    padding-left: .5rem;
+    box-shadow: 0 .5rem 2vh var(--secondary)
+}
+
+footer {
+    text-align: center;
+    color: var(--secondary);
+    text-shadow: 0 0 .25rem .75rem var(--secondary);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 2vw;
+    margin-bottom: auto;
+}
+
+section {
+    background-color: var(--tertiary);
+    padding: 1vw;
+    display: grid;
+    grid-template-columns: auto 2fr;
+    gap: 0 1rem;
+    border-radius: .25rem;
+    margin: 1rem 0;
+}
+
+.role {
+    padding-left: .5rem;
+}
+
+.details {
+    padding-left: .75rem;
+}
+
+.role,
+.name {
+    grid-column: span 2;
+}
+
+h1,
+.name {
+    color: var(--primary);
+    text-shadow: inset 0 0 .25rem var(--tertiary);
+}
+
+.names {
+    text-shadow: inset 0 0 .251rem var(--tertiary);
+}
+
+@media screen and (min-width: 768px) {
+    header {
+        padding: 1vh;
+    }
+
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    section {
+        width: 45vw;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    section {
+        width: 100%;
+        transition: 1s;
+        box-shadow: inset 0 0 .15vw var(--tertiary), 0 0 1vw .25vw var(--tertiary);
+    }
+
+    section p,
+    section .name {
+        transition: 1s;
+    }
+
+    section:hover {
+        box-shadow: inset 0 0 .75vw var(--secondary), 0 0 1vw .25vw var(--primary);
+    }
+
+    section:hover p {
+        color: var(--primary);
+    }
+
+    section:hover .name {
+        color: var(--secondary);
+    }
+
+    a:hover {
+        color: var(--hover);
+    }
+}
