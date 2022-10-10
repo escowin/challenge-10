@@ -195,42 +195,10 @@ const addIntern = function () {
 
 // select | finalize team: exits prompts, generates html, copies stylesheet
 const finalizeTeam = function () {
-  // generatePage(team);
-  // fs.writeFile('index.html', generatePage(team), (err) => {
-  //     if (err) throw err;
-  //     console.log('team profile page has been built.');
-  // });
-  // fs.copyFile('./src/styles.css', './dist/styles.css', (err) => {
-  //   if (err) {
-  //     console.log(err);
-  //     return;
-  //   }
-  //   console.log('stylesheet copied to ./dist/styles.css');
-  // });
-};
-
-// mock data
-const mockData = [
-  new Manager("Patrick Bateman", 1, "bateman@pierceandpierce.com", 69),
-  new Engineer(
-    "David van Patten",
-    2,
-    "vanpatten@pierceandpierce.com",
-    "vanhub"
-  ),
-  new Engineer("Timothy Bryce", 3, "bryce@pierceandpierce.com", "brycehub"),
-  new Intern("Paul Allen", 4, "paul@pierceandpierce.com", "Yale"),
-  new Intern("Jean", 5, "jean@pierceandpierce.com", "NYU")
-];
-
-const testing = () => {
-  const pageHTML = generatePage(mockData);
-  fs.writeFile("./dist/index.html", pageHTML, (err) => {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    console.log('team profile written to ./dist/index.html');
+  generatePage(team);
+  fs.writeFile('index.html', generatePage(team), (err) => {
+      if (err) throw err;
+      console.log('team profile page has been built.');
   });
   fs.copyFile('./src/styles.css', './dist/styles.css', (err) => {
     if (err) {
@@ -241,7 +209,5 @@ const testing = () => {
   });
 };
 
-testing();
-
 // calls
-// createManager();
+createManager();
