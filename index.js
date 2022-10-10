@@ -16,6 +16,14 @@ const createManager = function () {
         type: "text",
         name: "name",
         message: "enter team manager's name",
+        validate: nameInput => {
+          if (nameInput) {
+            return true;
+          } else {
+            console.log('enter name');
+            return false;
+          }
+        }
       },
       {
         type: "number",
@@ -45,7 +53,7 @@ const createManager = function () {
     });
 };
 
-// - after user answers prompts, show user a menu(options: add engineer, add intern, finish building team)
+// - after user answers prompts, show user menu options
 const menu = function () {
   console.log(`
     ===============================
@@ -84,6 +92,14 @@ const addEngineer = function () {
         type: "text",
         name: "name",
         message: "enter engineer's name",
+        validate: nameInput => {
+          if (nameInput) {
+            return true;
+          } else {
+            console.log('enter name');
+            return false;
+          }
+        }
       },
       {
         type: "number",
@@ -99,6 +115,14 @@ const addEngineer = function () {
         type: "text",
         name: "github",
         message: "enter engineer's github username",
+        validate: githubInput => {
+          if (githubInput) {
+            return true;
+          } else {
+            console.log('enter github');
+            return false;
+          }
+        }
       },
     ])
     .then((answers) => {
@@ -109,9 +133,9 @@ const addEngineer = function () {
         answers.github
       );
       team.push(engineer);
+      // return to menu
       menu();
     });
-  // - after user answers prompts, return to menu
 };
 
 // select | intern
@@ -122,6 +146,14 @@ const addIntern = function () {
         type: "text",
         name: "name",
         message: "enter intern's name",
+        validate: nameInput => {
+          if (nameInput) {
+            return true;
+          } else {
+            console.log('enter name');
+            return false;
+          }
+        }
       },
       {
         type: "number",
@@ -137,6 +169,14 @@ const addIntern = function () {
         type: "text",
         name: "school",
         message: "enter intern's school",
+        validate: schoolInput => {
+          if (schoolInput) {
+            return true;
+          } else {
+            console.log('enter school');
+            return false;
+          }
+        }
       },
     ])
     .then((answers) => {
@@ -147,29 +187,27 @@ const addIntern = function () {
         answers.school
       );
       team.push(intern);
+      // return to menu
       menu();
     });
   // ** validation to ensure proper input
 };
 
-// select | finish building team
+// select | finalize team: exits prompts, generates html, copies stylesheet
 const finalizeTeam = function () {
-  console.log(team);
-  // team.forEach(employee => console.log(employee.name));
   // generatePage(team);
   // fs.writeFile('index.html', generatePage(team), (err) => {
   //     if (err) throw err;
   //     console.log('team profile page has been built.');
   // });
+  // fs.copyFile('./src/styles.css', './dist/styles.css', (err) => {
+  //   if (err) {
+  //     console.log(err);
+  //     return;
+  //   }
+  //   console.log('stylesheet copied to ./dist/styles.css');
+  // });
 };
-// - exit app, generate html
-
-// fs writeFile
-// - generate html page from that data
-
-// dist/profile.html
-// - clicking on email link will open default email program & populate the TO field with employee's email
-// - clicking on github link opens new tab
 
 // mock data
 const mockData = [
@@ -192,14 +230,14 @@ const testing = () => {
       console.log(err);
       return;
     }
-    console.log('team profile written to ./dist/index.html')
+    console.log('team profile written to ./dist/index.html');
   });
   fs.copyFile('./src/styles.css', './dist/styles.css', (err) => {
     if (err) {
       console.log(err);
       return;
     }
-    console.log('stylesheet copied to ./dist/styles.css')
+    console.log('stylesheet copied to ./dist/styles.css');
   });
 };
 
